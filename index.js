@@ -2,11 +2,20 @@
 // Promises, Map and Reduce.
 
 function GitHubUser (username) {
-    // Fill thisjgv,jhvkjh
+    // Fill this 
+  this.username = username
 }
 
-GitHubUser.prototype.getUserInformation = function () {
-    // Fill this
+GitHubUser.prototype.getUserInformation = function (username) {
+    return new Promise((resolve, reject) => {
+       let url = 'https://api.github.com/users/'+username;
+       const xhr = new XMLHttpRequest();
+       xhr.open("GET", url);
+       xhr.onload = () => resolve(xhr.responseText);
+       xhr.onerror = () => reject(xhr.statusText);
+       xhr.send();
+});
+  // Fill this
 };
 
 GitHubUser.prototype.getRepos = function () {
