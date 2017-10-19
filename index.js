@@ -2,7 +2,7 @@
 // Promises, Map and Reduce.
 
 function GitHubUser (username) {
-    // Fill this
+    // Fill thisjgv,jhvkjh
 }
 
 GitHubUser.prototype.getUserInformation = function () {
