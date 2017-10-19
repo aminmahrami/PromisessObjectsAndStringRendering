@@ -2,21 +2,24 @@
 // Promises, Map and Reduce.
 
 function GitHubUser (username) {
-    // Fill this 
   this.username = username
 }
 
+let ideable = new GitHubUser;
+
 GitHubUser.prototype.getUserInformation = function (username) {
+    let url = 'https://api.github.com/users/'+username;
+    console.log(url);
+  
     return new Promise((resolve, reject) => {
-       let url = 'https://api.github.com/users/'+username;
        const xhr = new XMLHttpRequest();
        xhr.open("GET", url);
        xhr.onload = () => resolve(xhr.responseText);
        xhr.onerror = () => reject(xhr.statusText);
        xhr.send();
 });
-  // Fill this
 };
+console.log(ideable.getUserInformation('ideabile'));
 
 GitHubUser.prototype.getRepos = function () {
     // Fill this
@@ -30,7 +33,7 @@ function Render($element, html){
     // Fill this
 }
 
-
+/*
 // Expecting
 let gitUser = new GitHubUser('ideabile');
 
@@ -44,3 +47,4 @@ gitUser
         this.repos = repos;
         Render('.githubView', this.render());
     });
+*/
